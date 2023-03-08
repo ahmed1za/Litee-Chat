@@ -1,0 +1,8 @@
+<div>
+  <form  [formGroup]="zoneSaisie" method="post">
+  <div >
+    <input type="text" formControlName="message" [ngClass]="{'form-control':true}" >
+  </div>
+    <button type="submit" (click)="onClickButton()">envoyer</button>
+  </form>
+</div>

@@ -1,0 +1,10 @@
+p{
+  background-color: aqua;
+  font-weight: bold;
+  float: right;
+  margin-right: 100px;
+  width: 600px;
+  overflow: auto;
+  word-break: break-word;
+  white-space: normal;
+}
