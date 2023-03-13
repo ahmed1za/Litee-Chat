@@ -7,17 +7,19 @@ import { EnTeteComponent } from './en-tete/en-tete.component';
 import { PiedDePageComponent } from './pied-de-page/pied-de-page.component';
 import { ZonePrincipaleComponent } from './zone-principale/zone-principale.component';
 import { ZoneDeGaucheComponent } from './zone-de-gauche/zone-de-gauche.component';
-import { AuthentificationComponent } from './authentification/authentification.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 import {RouterModule, Routes} from "@angular/router";
 import { AccueilComponent } from './accueil/accueil.component';
 import { PagePrincipaleComponent } from './page-principale/page-principale.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 
 
+
 const appRoutes :Routes= [
-  {path : 'authentification', component:AuthentificationComponent},
+  {path : 'inscription', component:InscriptionComponent},
   {path : 'app-page-principale',component:PagePrincipaleComponent},
-  {path:'connexion',component:ConnexionComponent}
+  {path:'connexion',component:ConnexionComponent},
+  {path:'accueil',component:AccueilComponent}
 ];
 @NgModule({
   declarations: [
@@ -26,7 +28,7 @@ const appRoutes :Routes= [
     PiedDePageComponent,
     ZonePrincipaleComponent,
     ZoneDeGaucheComponent,
-    AuthentificationComponent,
+    InscriptionComponent,
     AccueilComponent,
     PagePrincipaleComponent,
     ConnexionComponent,
@@ -42,4 +44,6 @@ const appRoutes :Routes= [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+
+}

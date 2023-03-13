@@ -1,13 +1,14 @@
 <div xmlns="http://www.w3.org/1999/html">
-  <form [formGroup]="connexionForm">
-  <div>
-    <label>email :</label>
-    <input type="text" formControlName="email" [ngClass]="{'form-control':true}">
+  <form (ngSubmit)="onConnexion()">
+  <div class="form-group">
+    <label for="email">email :</label>
+    <input type="email" class="form-control" id="email" [(ngModel)]="email" name="email" required>
   </div>
-  <div>
-    <label>mot de passe</label>
-    <input type="password" formControlName="motDePasse" [ngClass]="{'form-control':true}">
+  <div class="form-group">
+    <label for="motDePasse">mot de passe :</label>
+    <input type="password" class="form-control" id="motDePasse" [(ngModel)]="motDePasse" name="motDePasse" required>
   </div>
-  <button (click)="onConnexion()">connexion</button>
+  <button type="submit" class="btn btn-primary">connexion</button>
   </form>
 </div>
+<router-outlet></router-outlet>

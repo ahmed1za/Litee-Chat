@@ -4,7 +4,8 @@ import {Router} from "@angular/router";
 @Component({
   selector: 'app-accueil',
   templateUrl: './accueil.component.html',
-  styleUrls: ['./accueil.component.css']
+  styleUrls: ['./accueil.component.css'],
+
 })
 export class AccueilComponent {
   title:string="Litee Chat"
@@ -13,7 +14,6 @@ export class AccueilComponent {
 
 
   onClickAccueil() {
-
-    this.router.navigate(['/app-page-principale']);
+    this.router.navigate(['connexion']);
   }
 }

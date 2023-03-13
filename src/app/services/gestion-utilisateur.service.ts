@@ -1,3 +1,4 @@
+
 import {EventEmitter, Injectable} from '@angular/core';
 import {Personne} from "../models/personne";
 import {HttpClient} from "@angular/common/http";
@@ -33,7 +34,7 @@ export class GestionUtilisateurService {
     this.emmeteurPersonne.emit(this.personnes.slice());
   }
   public ajouter(p:Personne) : boolean {
-    if (p && p.nom !='' && p.prenom != '' && p.email!='' && p.numeTel!=null && p.dateDeNaissance!=null){
+    if (p && p.nom !='' && p.prenom != '' && p.email!='' && p.numeTel!=null && p.dateDeNaissance!=null && p.motDePasse != ''){
       this.personnes.push(p);
       this.notifier();
       return true;
@@ -45,4 +46,5 @@ export class GestionUtilisateurService {
   public charger(){
     this.notifier();
   }
+
 }

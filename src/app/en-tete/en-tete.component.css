@@ -25,3 +25,15 @@ p {
   margin-left: 20px;
   margin-top: 10px;
 }
+
+#seConnecter{
+  margin-left: 30px;
+}
+#nomPrenom{
+position: absolute;
+  right: 0;
+  margin-right: 60px;
+  width: 10%;
+  font-family: "Arial Black", serif;
+  font-size: 15px;
+}

@@ -1,5 +1,5 @@
-import { Input,Component } from '@angular/core';
-import {Router} from "@angular/router";
+import {Input, Component, OnInit} from '@angular/core';
+import {ActivatedRoute, Router} from "@angular/router";
 
 
 @Component({
@@ -7,23 +7,39 @@ import {Router} from "@angular/router";
   templateUrl: './en-tete.component.html',
   styleUrls: ['./en-tete.component.css']
 })
-export class EnTeteComponent {
+export class EnTeteComponent implements OnInit{
   @Input()
   nomApplication: String | undefined;
+  //@ts-ignore
+  nom:string;
+  //@ts-ignore
+  prenom:string;
 
 
   onUrl() {
 
   }
-  constructor(private router: Router) {
+  constructor(private router: Router,private route:ActivatedRoute) {
   }
 
   onClick() {
-    this.router.navigate(['authentification']);
+    this.router.navigate(['inscription']);
 
   }
 
   onClickCon() {
     this.router.navigate(['connexion']);
   }
+
+  ngOnInit(): void {
+    this.route.queryParams.subscribe(params=>{
+      this.nom=params['nom'];
+      this.prenom=params['prenom'];
+  })
 }
+
+  onLogin() {
+    this.router.navigate(['connexion']);
+  }
+}
+

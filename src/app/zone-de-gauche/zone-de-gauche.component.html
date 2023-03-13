@@ -1,6 +1,6 @@
 <div>
   <ul *ngFor="let util of utilisateurs">
-    <a [routerLink]="util"><li>{{util.nom}} {{util.prenom}}</li></a>
+    <li [routerLink]="util" (click)="onClick(util)">{{util.nom}} {{util.prenom}}</li>
 
     </ul>
 </div>

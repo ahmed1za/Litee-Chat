@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GestionDatasService} from "../services/gestion-datas.service";
 import {Messages} from "../models/messages";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-zone-principale',
@@ -10,7 +11,8 @@ import {Messages} from "../models/messages";
 export class ZonePrincipaleComponent implements OnInit, OnDestroy{
  // @ts-ignore
   public dataSaisie: Messages[];
-  constructor(private gestionDatas : GestionDatasService,) {
+
+  constructor(private gestionDatas : GestionDatasService) {
   }
   ngOnInit(){
 
@@ -21,7 +23,7 @@ export class ZonePrincipaleComponent implements OnInit, OnDestroy{
   }
 
 
-  onCharger() {
+   onCharger() {
     this.gestionDatas.getMessage().subscribe((result:any)=>{
       this.dataSaisie = result.data;});
   }

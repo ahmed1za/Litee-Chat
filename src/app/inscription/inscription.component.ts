@@ -5,21 +5,17 @@ import {Personne} from "../models/personne";
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-authentification',
-  templateUrl: './authentification.component.html',
-  styleUrls: ['./authentification.component.css']
+  selector: 'app-inscription',
+  templateUrl: './inscription.component.html',
+  styleUrls: ['./inscription.component.css']
 })
-export class AuthentificationComponent implements OnInit{
+export class InscriptionComponent implements OnInit{
  //@ts-ignore
   angularForm: FormGroup;
 
 
   ngOnInit() : void{
-    this.gestionPersonne.getUtilisateur().subscribe(
-      data=>{
-        console.log(data);
-      }
-    )
+
   }
   constructor(private formBuilder:FormBuilder,private gestionPersonne :GestionUtilisateurService, private router:Router) {
     this.creeFormulaire();
@@ -76,7 +72,7 @@ export class AuthentificationComponent implements OnInit{
 
     this.gestionPersonne.addUtilisateur(this.angularForm.value).subscribe(
       data=>{
-        this.router.navigate(['/'])
+        this.router.navigate(['app-page-principal'])
       });
       // @ts-ignore
       this.angularForm.reset();

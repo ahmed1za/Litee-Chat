@@ -1,4 +1,5 @@
 <div>
+
  <div *ngIf="dataSaisie && dataSaisie">
   <p *ngFor="let ds of dataSaisie">{{ds.message}}</p>
    <button (click)="onCharger()" type="submit">charger l'historique</button>
