@@ -1,0 +1,24 @@
+button {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: calc(50% - 16px / 2);
+  top: calc(50% - 16px / 2);
+
+  font-family: 'Segoe Fluent Icons', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 16px;
+  /* identical to box height, or 100% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  /* Light/Fill Color/Text/Primary */
+
+  color: rgba(0, 0, 0, 0.8956);
+
+  border-radius: 2px;
+}
