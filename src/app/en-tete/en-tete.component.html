@@ -1,0 +1,15 @@
+
+<div xmlns="http://www.w3.org/1999/html">
+<div><p id="nomPrenom"> {{nom}} {{prenom}}</p></div>
+  <span *ngIf="nom&&prenom"><a routerLink="app-page-principale">{{nomApplication}}</a></span>
+  <span *ngIf="!nom&&!prenom"><a routerLink="">{{nomApplication}}</a></span>
+
+<div *ngIf="!nom&&!prenom">
+  <a routerLink="authentification" (click)="onClick()">s'inscrire</a>
+
+  <a routerLink="connexion" (click)="onClickCon()" id="seConnecter">se connecter</a>
+</div>
+  <div *ngIf="nom&&prenom">
+  <a routerLink="connexion" (click)="onLogin()" >se déconnecter</a>
+  </div>
+</div>

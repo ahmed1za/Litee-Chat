@@ -1,0 +1,21 @@
+<div class="dropdown">
+
+  <ul class="dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></ul>
+
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" routerLink="parametres" (click)="onParam()">Général</a>
+    <a class="dropdown-item" href="#">Avancé</a>
+    <a class="dropdown-item" href="#">Aide</a>
+  </div>
+</div>
+<div>
+
+  <input type="text" placeholder="search">
+</div>
+<div>
+  <ul *ngFor="let util of utilisateurs">
+    <li  (click)="onClick(util)">{{util.nom}} {{util.prenom}}</li>
+
+    </ul>
+</div>
+

@@ -1,0 +1,141 @@
+body{
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+
+  background: #FFFFFF;
+  mix-blend-mode: multiply;
+  /* Light / Shell Shadows / Active Window */
+
+  box-shadow: 0px 32px 64px rgba(0, 0, 0, 0.28), 0px 2px 21px rgba(0, 0, 0, 0.22);
+  border-radius: 7px;
+}
+#auto-layout{
+  display: flex;
+  flex-direction: column;
+
+  padding: 0px;
+
+  width: 540px;
+  height: 268px;
+  align-items: center;
+  margin-left: 400px;
+  margin-top: 200px;
+
+
+
+  /* Light/Background/Fill Color/Solid Background/Base */
+
+  background: #F3F3F3;
+  /* Light/Stroke Color/Surface Stroke/Default
+
+  Fallback Color: #757575, 100%
+  */
+  border: 1px solid rgba(117, 117, 117, 0.4);
+  border-radius: 7px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: center;
+  flex-grow: 0;
+}
+#btn1{box-sizing: border-box;
+
+  /* Auto layout */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 12px 7px;
+
+  width: 242px;
+  height: 32px;
+
+  /* Light/Fill Color/Accent/Default
+
+  3:1 with worst case background
+  */
+  background: #005FB8;
+  border-radius: 4px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 1;}
+#btn2{display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 11px 6px;
+
+  width: 240px;
+  height: 30px;
+
+  /* Light/Fill Color/Control/Default */
+
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 1;}
+h1{
+  width: 492px;
+  height: 28px;
+  margin-left: 30%;
+
+
+  font-family: 'Segoe UI', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  /* identical to box height, or 140% */
+
+
+  /* Light/Fill Color/Text/Primary */
+
+  color: rgba(0, 0, 0, 0.8956);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  align-self: stretch;
+  flex-grow: 0;
+}
+p{
+  width: 492px;
+  height: 100px;
+
+  font-family: 'Segoe UI', serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+
+  font-feature-settings: 'rclt' off;
+
+  /* Light/Fill Color/Text/Primary */
+
+  color: rgba(0, 0, 0, 0.8956);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 1;
+  align-self: stretch;
+  flex-grow: 0;
+}

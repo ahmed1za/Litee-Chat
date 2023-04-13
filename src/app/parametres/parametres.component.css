@@ -1,0 +1,32 @@
+.itemMenu{
+  float: left;
+  display: block;
+
+}
+h1{
+  margin-left: 40%;
+  top: 10%;
+position: absolute;
+text-align: center;
+  height: auto;
+}
+.menu{
+
+  margin-left: 20%;
+
+  float: top;
+
+}
+
+.menu-border{
+  top: 25%;
+  float: top;
+
+  position: relative;
+
+}
+.menu-configuration{
+  height: 50%;
+
+}
+

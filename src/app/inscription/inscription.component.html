@@ -1,0 +1,42 @@
+<div  xmlns="http://www.w3.org/1999/html">
+  <h3>inscription</h3>
+  <form  [formGroup]="angularForm" method="post">
+    <div >
+      <label class="center-block">Nom : </label>
+      <input type="text" formControlName="nom" [ngClass]="{'form-control':true, 'is-invalid': nomInvalide()}" >
+
+    </div>
+
+    <div>
+      <label class="center-block">Prénom : </label>
+      <input type="text" formControlName="prenom" [ngClass]="{'form-control':true, 'is-invalid': prenomInvalide()}">
+
+    </div>
+    <div>
+      <label class="center-block">Mail : </label>
+      <input type="text" formControlName="email" [ngClass]="{'form-control':true}">
+    </div>
+    <div>
+      <label class="center-block"> Date de naissance :</label>
+      <input type="date" formControlName="dateDeNaissance" [ngClass]="{'form-control':true}">
+
+    </div>
+    <div>
+      <label class="center-block">Numéro de telephone :</label>
+      <input type="number" formControlName="numtel" [ngClass]="{'form-control':true}">
+    </div>
+    <div>
+      <label class="center-block">Mot de passe</label>
+      <input type="password" formControlName="motDePasse" [ngClass]="{'form-control':true}">
+    </div>
+    <div *ngIf="nomInvalide()" class="alert alert-danger">
+      Le nom est obligatoire !
+    </div>
+    <div *ngIf="prenomInvalide()" class="alert alert-danger">
+      Le prenom est obligatoire !
+    </div>
+    <button type="submit" class="btn-success" (click)="onEnregistrer()">Enregistrer </button>
+
+  </form>
+</div>
+

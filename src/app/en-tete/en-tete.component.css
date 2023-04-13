@@ -1,0 +1,39 @@
+p {
+  width: 53px;
+  height: 16px;
+
+  font-family: 'Segoe UI';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  /* identical to box height, or 133% */
+
+  display: flex;
+  align-items: center;
+
+  /* Light/Fill Color/Text/Primary */
+
+  color: rgba(0, 0, 0, 0.8956);
+
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#seConnecter{
+  margin-left: 30px;
+}
+#nomPrenom{
+position: absolute;
+  right: 0;
+  margin-right: 60px;
+  width: 10%;
+  font-family: "Arial Black", serif;
+  font-size: 15px;
+}

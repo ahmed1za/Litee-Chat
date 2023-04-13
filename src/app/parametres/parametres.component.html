@@ -1,0 +1,187 @@
+
+
+<!--<div class="container">
+  <div class="btn-secondary">
+    <h1>General setings</h1>
+  </div>
+  <div>
+    <h4>personal data</h4>
+  </div>
+  <div class="dropdown">
+
+    <h4 class="dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" > notification</h4>
+
+    <form  class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <ul class="sous">
+
+        <li><label>Recieve notification from group</label><input type="checkbox"></li>
+        <li><label>Recieve notifications from contact</label><input type="checkbox"></li>
+        <li><label>Recieve notifications from unknown people</label> <input type="checkbox"></li>
+        <li><label>Recieve systeme notification</label> <input type="checkbox"></li>
+      </ul>
+
+    </form>
+  </div>
+</div>-->
+
+
+
+
+<div class="reglages"><p class="btn"></p></div>
+  <div class="configuration">
+    <div class="liste">
+
+      <div class='itemMenu'>
+        <i class="fa-solid fa-gears"></i>
+        <a href="#" class="itemMenuLink">General Settins</a>
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-brush"></i>
+        <a href="#" class="itemMenuLink">Apparences</a>
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-shield-halved"></i>
+        <a href="#" class="itemMenuLink">Pivacy and Security</a>
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-image"></i>
+        <a href="#" class="itemMenuLink">Multimedia</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-laptop-file"></i>
+        <a href="#" class="itemMenuLink">Other Device</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-language"></i>
+        <a href="#" class="itemMenuLink">Time and Languages</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-address-book"></i>
+        <a href="#" class="itemMenuLink">Contacts</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-microphone"></i>
+        <a href="#" class="itemMenuLink">Hey, Celia</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-cloud"></i>
+        <a href="#" class="itemMenuLink">Sync with Litee Cloud</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-user"></i>
+        <a href="#" class="itemMenuLink">Litee Account</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-circle-info"></i>
+        <a href="#" class="itemMenuLink">About Litee Chat</a>
+
+      </div><br>
+      <div class='itemMenu'>
+        <i class="fa-solid fa-circle-down"></i>
+        <a href="#" class="itemMenuLink">Update</a>
+      </div>
+    </div>
+  </div>
+  <div class="menu-configuration">
+
+    <h1 class="titre">General Settings</h1><br/>
+
+    <details class="menu">
+      <summary class="menu-border">
+        <div><i class="fa-solid fa-power-off"></i> Personnal Data</div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </summary>
+      <div>
+        <ul>
+          <ul>
+
+          </ul>
+
+        </ul>
+      </div>
+    </details>
+
+
+    <details class="menu">
+      <summary class="menu-border">
+        <div> <i class="fa-solid fa-power-off"></i> Notifications</div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </summary>
+      <div>
+        <ul>
+          <ul>
+            <form [formGroup]="notifForm" method="post">
+            <li><label>Recieve notification from group </label><select formControlName="notif_group" [(ngModel)]="selectedOption1" (change)="onOption1Selected()" > <option value="true"> allowed </option> <option value="false"> blocked </option> </select></li>
+            <li><label>Recieve notifications from contact </label><select formControlName="notif_contact" [(ngModel)]="selectedOption2" (change)="onOption2Selected()"> <option value="true"> allowed </option> <option value="false"> blocked </option> </select></li>
+            <li><label>Recieve notifications from unknown people </label> <select formControlName="notif_inconnu"  [(ngModel)]="selectedOption3" (change)="onOption3Selected()" > <option value="true"> allowed </option> <option value="false"> blocked </option> </select></li>
+            <li><label>Recieve systeme notification </label> <select formControlName="notif_system"  [(ngModel)]="selectedOption4" (change)="onOption4Selected()"> <option value="true"> allowed </option> <option value="false"> blocked </option> </select></li>
+
+            </form>
+          </ul>
+
+        </ul>
+      </div>
+
+    </details>
+
+
+    <details class="menu">
+      <summary class="menu-border">
+        <div><i class="fa-solid fa-power-off"></i> Calls and Videocalls</div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </summary>
+      <div>
+        <ul>
+          <ul>
+
+          </ul>
+
+        </ul>
+      </div>
+    </details>
+
+
+    <details class="menu">
+      <summary class="menu-border">
+        <div><i class="fa-solid fa-power-off"></i> Third-party platforms</div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </summary>
+      <div>
+        <ul>
+          <ul>
+
+          </ul>
+
+        </ul>
+      </div>
+    </details>
+
+    <details class="menu">
+      <summary class="menu-border">
+        <div><i class="fa-solid fa-power-off"></i> Storage</div>
+        <i class="fa-solid fa-chevron-down"></i>
+      </summary>
+      <div>
+        <ul>
+          <ul>
+
+          </ul>
+
+        </ul>
+      </div>
+    </details>
+
+  </div>
+
+
+
+
+
+
