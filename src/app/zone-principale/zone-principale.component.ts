@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {GestionDatasService} from "../services/gestion-datas.service";
 import {Messages} from "../models/messages";
 import {ActivatedRoute} from "@angular/router";
+import {SocketServiceService} from "../services/socket-service.service";
 
 
 
@@ -23,7 +24,7 @@ export class ZonePrincipaleComponent implements OnInit, OnDestroy{
 
 
 
-  constructor(private gestionDatas : GestionDatasService ,private route : ActivatedRoute, ) {
+  constructor(private gestionDatas : GestionDatasService ,private route : ActivatedRoute,) {
 
   }
 
@@ -35,7 +36,8 @@ export class ZonePrincipaleComponent implements OnInit, OnDestroy{
     {
       this.nom=params['nom'];
       this.prenom=params['prenom'];
-    })
+    });
+
   }
 
   ngOnDestroy(): void {

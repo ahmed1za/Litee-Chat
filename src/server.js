@@ -1,10 +1,19 @@
 const app = require('express')();
 const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+//const io = require('socket.io')(http);
 
+// server-side
+const io = require("socket.io")(http, {
+  cors: {
+    origin: "http://localhost:4200",
+    methods: ["GET", "POST"],
+    allowedHeaders: ["my-custom-header"],
+    credentials: true
+  }
+});
 io.on('connection',(socket)=>{
     console.log('Client connected');
-    socket.emit('message','bienvenue dans litee-chat');
+
 
     socket.on('message',(data)=>{
         console.log(data);
@@ -15,6 +24,6 @@ io.on('connection',(socket)=>{
     });
 });
 
-http.listen(4200,()=>{
+http.listen(3000,()=>{
     console.log('Server listening on port 3000');
 })

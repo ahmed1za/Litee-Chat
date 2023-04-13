@@ -9,6 +9,19 @@
 
 
   </div>
-  <button (click)="onCharger()" type="submit">charger l'historique</button>
+ <!--<button (click)="onCharger()" type="submit">charger l'historique</button>-->
 </div>
 </div>
+<script>
+  import {SocketServiceService} from "../services/socket-service.service";
+  import {ZonePrincipaleComponent} from "./zone-principale.component";
+var charger = new ZonePrincipaleComponent;
+  var socket = new SocketServiceService;
+  socket.socketInstance().on('message',()=>{
+    console.log("log de getMessage Js");
+    charger.onCharger();
+  });
+
+
+</script>
+

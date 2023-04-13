@@ -35,7 +35,7 @@ constructor(private formBuilder:FormBuilder,private gestionDatas:GestionDatasSer
 
 this.gestionDatas.donnee.subscribe(donnee=>this.destinataire_id = donnee);
 
-console.log("log de gestion data donnee :", this.gestionDatas.donnee);
+//console.log("log de gestion data donnee :", this.gestionDatas.donnee);
     }
 
   private creeFormulaire() {
@@ -64,10 +64,10 @@ console.log("log de gestion data donnee :", this.gestionDatas.donnee);
       // @ts-ignore
       this.gestionDatas.addMessage(this.zoneSaisie.value).subscribe(data => {
         // @ts-ignore
-        console.log("log :", this.zoneSaisie.controls.envoyeur_id);
+      //  console.log("log :", this.zoneSaisie.controls.envoyeur_id);
 
-        console.log("premier log :", this.destinataire_id);
-        console.log("deuxieme log :", this.gestionDatas);
+       /* console.log("premier log :", this.destinataire_id);
+        console.log("deuxieme log :", this.gestionDatas);*/
 
 
       });
