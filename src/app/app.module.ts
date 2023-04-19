@@ -49,7 +49,7 @@ const appRoutes :Routes= [
     ReactiveFormsModule,
     NgOptimizedImage
   ],
-  providers: [],
+  providers: [  ZonePrincipaleComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

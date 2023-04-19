@@ -3,6 +3,7 @@ import {GestionUtilisateurService} from "../services/gestion-utilisateur.service
 import {Personne} from "../models/personne";
 import {Router} from "@angular/router";
 import {GestionDatasService} from "../services/gestion-datas.service";
+import {ZonePrincipaleComponent} from "../zone-principale/zone-principale.component";
 
 
 @Component({
@@ -13,8 +14,13 @@ import {GestionDatasService} from "../services/gestion-datas.service";
 export class ZoneDeGaucheComponent implements OnInit{
 
   utilisateurs:any;
-  constructor(private utilisateur : GestionUtilisateurService,private route:Router,private dataservice :GestionDatasService) {
+  constructor(private utilisateur : GestionUtilisateurService,
+              private route:Router,
+              private dataservice :GestionDatasService,
+              private zonePrincipale: ZonePrincipaleComponent,)
+  {
   }
+
 
   ngOnInit(): void {
     this.utilisateur.getUtilisateur().subscribe((result:any)=>{
@@ -38,9 +44,13 @@ export class ZoneDeGaucheComponent implements OnInit{
     const index = this.utilisateurs.findIndex((u: any) => u.id === util.id);
     const utilisateurCible = this.utilisateurs[index];
     this.dataservice.echangeDonnees(utilisateurCible.id);
-    console.log(utilisateurCible.id);
+    localStorage.setItem('utilisateurCible',JSON.stringify(utilisateurCible.id));
+
       // @ts-ignore
    // this.route.navigate(['app-page-principale'],{queryParams:{nomDestinataire:utilisateurCible.nom,prenomDestinataire:utilisateurCible.prenom}})
+    this.zonePrincipale.onCharger();
+
+
 
     }
 

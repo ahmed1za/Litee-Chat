@@ -1,1 +1,9 @@
+.dropdown, .menu, input {
+  display: block;
+  margin-bottom: 10px;
+
+}
+body{
+  overflow: auto;
+}
 

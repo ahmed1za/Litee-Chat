@@ -21,15 +21,17 @@ export class ZonePrincipaleComponent implements OnInit, OnDestroy{
   public dataSaisie: Messages[];
   public nom: any;
   public prenom: any;
+  private socket: any;
 
 
 
-  constructor(private gestionDatas : GestionDatasService ,private route : ActivatedRoute,) {
+  constructor(private gestionDatas : GestionDatasService ,private route : ActivatedRoute,private socketService: SocketServiceService) {
+    this.socket = this.socketService.socketInstance();
 
   }
 
   ngOnInit(){
-    this.gestionDatas.donnee.subscribe(donnee=>this.destinataire_id = donnee);
+  //  this.gestionDatas.donnee.subscribe(donnee=>this.destinataire_id = donnee);
 
     this.gestionDatas.emmeteurDeSaisie.subscribe((value)=>this.dataSaisie=value);
     this.route.queryParams.subscribe(params=>
@@ -38,18 +40,34 @@ export class ZonePrincipaleComponent implements OnInit, OnDestroy{
       this.prenom=params['prenom'];
     });
 
+    this.socket.on('new-message', () => {
+      console.log("log de getMessage Js");
+     this.onCharger();
+
+    });
+
+
   }
 
   ngOnDestroy(): void {
   }
 
 
-   onCharger() {
+  public onCharger() {
+
 
   // @ts-ignore
-  this.envoyeur_id = JSON.parse(localStorage.getItem('key'));
+     this.envoyeur_id = JSON.parse(localStorage.getItem('key'));
   // @ts-ignore
      this.envoyeur_id = this.envoyeur_id[0];
+
+     // @ts-ignore
+     this.destinataire_id= JSON.parse(localStorage.getItem('utilisateurCible'));
+     // @ts-ignore
+
+
+     // @ts-ignore
+
 
 
 
@@ -59,8 +77,13 @@ export class ZonePrincipaleComponent implements OnInit, OnDestroy{
  // @ts-ignore
        this.gestionDatas.getMessage(this.envoyeur_id, this.destinataire_id).subscribe((result: any) => {
    this.dataSaisie = result.data
-
+for (let i =0 ; i < this.dataSaisie.length ;i++)
+{
+  // @ts-ignore
+  console.log(this.dataSaisie[i].message)
+}
  });
+
 
 
 }else {
@@ -69,4 +92,5 @@ export class ZonePrincipaleComponent implements OnInit, OnDestroy{
 }
 
   }
+
 }

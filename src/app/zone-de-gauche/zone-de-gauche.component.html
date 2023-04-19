@@ -1,7 +1,7 @@
 <div class="dropdown">
 
-  <ul class="dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" ></ul>
 
+  <img src="assets/param.png"  class="dropdown-toggle"  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" routerLink="parametres" (click)="onParam()">Général</a>
     <a class="dropdown-item" href="#">Avancé</a>
@@ -12,9 +12,9 @@
 
   <input type="text" placeholder="search">
 </div>
-<div>
+<div class="menu">
   <ul *ngFor="let util of utilisateurs">
-    <li  (click)="onClick(util)">{{util.nom}} {{util.prenom}}</li>
+    <a  (click)="onClick(util)" class="btn">{{util.nom}} {{util.prenom}}</a>
 
     </ul>
 </div>

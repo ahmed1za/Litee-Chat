@@ -33,7 +33,7 @@ constructor(private formBuilder:FormBuilder,private gestionDatas:GestionDatasSer
 
     //})
 
-this.gestionDatas.donnee.subscribe(donnee=>this.destinataire_id = donnee);
+//this.gestionDatas.donnee.subscribe(donnee=>this.destinataire_id = donnee);
 
 //console.log("log de gestion data donnee :", this.gestionDatas.donnee);
     }
@@ -54,6 +54,8 @@ this.gestionDatas.donnee.subscribe(donnee=>this.destinataire_id = donnee);
 
     // @ts-ignore
     let utilisateur = JSON.parse(localStorage.getItem('key'));
+    // @ts-ignore
+    this.destinataire_id=JSON.parse(localStorage.getItem('utilisateurCible'));
 
     // @ts-ignore
     this.zoneSaisie.controls.envoyeur_id.value = utilisateur[0];
@@ -64,9 +66,9 @@ this.gestionDatas.donnee.subscribe(donnee=>this.destinataire_id = donnee);
       // @ts-ignore
       this.gestionDatas.addMessage(this.zoneSaisie.value).subscribe(data => {
         // @ts-ignore
-      //  console.log("log :", this.zoneSaisie.controls.envoyeur_id);
+     /*  console.log("log :", this.zoneSaisie.controls.envoyeur_id);
 
-       /* console.log("premier log :", this.destinataire_id);
+       console.log("premier log :", this.destinataire_id);
         console.log("deuxieme log :", this.gestionDatas);*/
 
 

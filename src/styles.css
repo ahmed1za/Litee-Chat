@@ -1,15 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~bootstrap/dist/css/bootstrap.min.css';
 app-zone-de-gauche{
-  display: flex;
-
+  display: block;
+overflow: auto;
   float: left;
-  width: 309px;
-  margin-top: 100px;
+  width: auto;
+  margin-top: 40px;
   height: auto;
-  margin-left: 0px;
+  margin-left: 10px;
   position: fixed;
-  background-color: lightcyan;
+  background-color: white;
+
+
 }
 app-pied-de-page{
   right: 0px;
@@ -31,6 +33,7 @@ app-zone-principale{
 }
 app-en-tete{
   background-color: lightcyan;
+
 }
 app-authentification{
   position: fixed;
@@ -40,3 +43,4 @@ app-authentification{
   height: 100%;
 
 }
+

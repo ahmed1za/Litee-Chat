@@ -4,6 +4,8 @@ import
 import {GestionUtilisateurService} from "../services/gestion-utilisateur.service";
 import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
+// @ts-ignore
+import * as bcrypt from "bcryptjs";
 
 
 
@@ -34,9 +36,16 @@ export class ConnexionComponent implements OnInit{
 
 
     this.util.login(this.email).subscribe((result:any)=>{
+      const hashedPassword = result.data[0].motDePasse;
+      console.log(this.util);
 
+      bcrypt.compare(this.motDePasse, hashedPassword, (err: any, isMatch: any) => {
+        if (err) {
+          console.error(err);
+          return;
+        }
 
-      if (result.data[0].motDePasse === this.motDePasse){
+      if (isMatch){
         const utilisateur = [result.data[0].id];
         localStorage.setItem("key",JSON.stringify(utilisateur));
 
@@ -45,6 +54,6 @@ export class ConnexionComponent implements OnInit{
       }else {
         console.log('erreur de connexion');
       }
-    })
-  }
-}
+    });
+  });
+}}

@@ -3,8 +3,8 @@ input{
   height: 100%;
 }
 button{
-  ;
   border-radius: revert;
-
-
+  float: right;
+  margin-right: 50px;
+  top: 10%;
 }

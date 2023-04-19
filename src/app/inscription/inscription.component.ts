@@ -72,7 +72,7 @@ export class InscriptionComponent implements OnInit{
 
     this.gestionPersonne.addUtilisateur(this.angularForm.value).subscribe(
       data=>{
-        this.router.navigate(['app-page-principal'])
+        this.router.navigate(['app-page-principale']);
       });
       // @ts-ignore
       this.angularForm.reset();

@@ -3,7 +3,7 @@ import {EventEmitter, Injectable} from '@angular/core';
 import {Messages} from "../models/messages";
 import {HttpClient} from "@angular/common/http";
 import {Personne} from "../models/personne";
-import {BehaviorSubject} from "rxjs";
+import {BehaviorSubject, Observable} from "rxjs";
 import {SocketServiceService} from "./socket-service.service";
 
 
@@ -23,10 +23,31 @@ export class GestionDatasService {
   baseUrl:string ='http://localhost/api/';
   constructor(private http:HttpClient ,private socket:SocketServiceService) {
   }
-  public getMessage(envoyeur_id:number,destinataire_id:number){
- this.socket.getMessages();
-    // @ts-ignore
-    return this.http.get<Messages[]>(this.baseUrl+'messageView.php?envoyeur_id='+envoyeur_id+'&destinataire_id='+destinataire_id);
+  public getMessage(envoyeur_id: number, destinataire_id: number): Observable<Messages[]> {
+    let socket = this.socket.getMessages();
+
+    return new Observable((observer) => {
+    /*  socket.subscribe((data: any) => {
+        console.log("log de getMessage socket");
+        console.log(data);
+      });*/
+
+
+     /* socket.on('new-message', (message: Messages) => {
+        observer.next([message]); // Envoyer le message en tant que tableau de messages
+      });*/
+
+      // Appeler la méthode HTTP pour récupérer les messages existants
+      this.http.get<Messages[]>(`${this.baseUrl}messageView.php?envoyeur_id=${envoyeur_id}&destinataire_id=${destinataire_id}`)
+        .subscribe((messages: Messages[]) => {
+          observer.next(messages);
+        });
+      // Gérer les erreurs
+
+    /*  socket.on('error', (error: any) => {
+        observer.error(error);
+      });*/
+    });
   }
   public addMessage(message :Messages,envoyeur_id:Personne,destinataire_id:Personne){
 
